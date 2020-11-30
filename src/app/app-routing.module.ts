@@ -16,7 +16,9 @@ const routes: Routes = [
   }, 
   { 
     path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) 
-  }
+  },
+
+  { path: 'partnet', loadChildren: () => import('./partner/partner.module').then(m => m.PartnerModule) }
 ];
 
 @NgModule({

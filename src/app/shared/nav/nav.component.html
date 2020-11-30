@@ -6,20 +6,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home
-        </a>
-      </li>
     </ul>
   </div>
   <div class="collapse navbar-collapse col-md-2 y-2 my-lg-0" id="navbarColor01">
     <ul class="navbar-nav mr-auto" *ngIf="user$ | async as user; else login">
-      <li class="nav-item" *ngIf="!user">
-        <a class="nav-link" routerLink="/login">Login
-        </a>
+      <li class="nav-item" *ngIf="user">
+        <!--<a class="nav-link" routerLink="/partnet">WorkSpace</a>-->
+        <button class="btn btn-info ml-1 my-2 my-sm-0" routerLink="/partnet">WorkSpace</button>
       </li>
-      <li class="nav-item ml-5" *ngIf="user">
-        <button class="btn btn-secondary ml-5 my-2 my-sm-0" (click)="onLogout()">Logout</button>
+      <li class="nav-item" *ngIf="user">
+        <button class="btn btn-secondary ml-3 my-2 my-sm-0" (click)="onLogout()">Logout</button>
       </li>
     </ul>
     <ng-template #login>
